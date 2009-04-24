@@ -34,7 +34,7 @@ while (my $c = $s->accept) {
     # First, Net::Twitter->show_status() seems to be broken, at least for
     # Identi.ca. Second, user_timeline() returns a hash with user data,
     # which gives me the user's name.
-    my $tl = $identica->user_timeline({ id => $username });
+    my $tl = $i->user_timeline({ id => $username });
 
     printf $c "Login: %-33s", $username;
     print $c "Name: " . $tl->[0]->{user}->{name} . "\n";
